@@ -6,6 +6,559 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Google Gemini!</h1>
+    <h1><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Profesional & Laboratorio de IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .section-content {
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-link.active {
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
+        }
+
+        .blog-sub-nav.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navegación de Cabecera -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent cursor-pointer" onclick="showSection('presentacion')">
+                        UrbanAI Pro
+                    </span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <button onclick="showSection('presentacion')" class="nav-link px-1 py-4 text-sm font-medium text-slate-500 hover:text-blue-600 transition" id="nav-presentacion">Presentación</button>
+                    <button onclick="showSection('servicios')" class="nav-link px-1 py-4 text-sm font-medium text-slate-500 hover:text-blue-600 transition" id="nav-servicios">Productos/Servicios</button>
+                    <button onclick="showSection('blog')" class="nav-link px-1 py-4 text-sm font-medium text-slate-500 hover:text-blue-600 transition" id="nav-blog">Laboratorio IA</button>
+                    <button onclick="showSection('recursos')" class="nav-link px-1 py-4 text-sm font-medium text-slate-500 hover:text-blue-600 transition" id="nav-recursos">Recursos</button>
+                    <button onclick="showSection('contacto')" class="nav-link px-1 py-4 text-sm font-medium text-slate-500 hover:text-blue-600 transition" id="nav-contacto">Contáctame</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- SECCIÓN: PRESENTACIÓN -->
+        <section id="presentacion" class="section-content active">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Soluciones Tecnológicas e <br><span class="text-blue-600 text-6xl">Innovación Educativa</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Consultoría integral en Inteligencia Artificial, auditoría de sistemas, Gerencia de Proyectos y diseño curricular. Apoyando el desarrollo académico y empresarial con tecnología de vanguardia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button onclick="showSection('blog')" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">Explorar Laboratorio IA</button>
+                        <button onclick="showSection('contacto')" class="bg-white text-slate-700 border border-slate-200 px-6 py-3 rounded-lg font-semibold hover:bg-slate-50 transition">Agendar Consultoría</button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" alt="Tecnología" class="rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PRODUCTOS / SERVICIOS -->
+        <section id="servicios" class="section-content">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Servicios Profesionales</h2>
+                <p class="text-slate-500">Catálogo integral de soluciones de ingeniería con asistencia de IA.</p>
+            </div>
+            
+            <!-- Herramienta de IA para servicios -->
+            <div class="bg-indigo-900 rounded-3xl p-8 mb-12 text-white shadow-xl relative overflow-hidden">
+                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Generador de Diseño Curricular ✨</h3>
+                        <p class="text-indigo-200 text-sm mb-6">Introduce un tema y nuestra IA diseñará una estructura curricular base para tu institución.</p>
+                        <div class="flex gap-2">
+                            <input type="text" id="curriculum-prompt" placeholder="Ej: Inteligencia Artificial en Medicina" class="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 outline-none text-sm placeholder:text-indigo-300 focus:bg-white/20">
+                            <button onclick="generateCurriculum()" class="bg-white text-indigo-900 px-6 py-3 rounded-xl font-bold text-sm hover:bg-indigo-50 transition shrink-0">Generar ✨</button>
+                        </div>
+                    </div>
+                    <div id="curriculum-result" class="bg-indigo-800/50 rounded-2xl p-6 min-h-[150px] border border-white/10 text-xs overflow-y-auto max-h-[300px] whitespace-pre-wrap">
+                        <div class="text-indigo-300 italic">Esperando temática...</div>
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <i class="fas fa-brain text-9xl"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <i class="fas fa-robot text-blue-600 text-2xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Proyectos de IA</h3>
+                    <p class="text-sm text-slate-500">Implementación de modelos de Computer Vision y redes neuronales para entornos urbanos.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <i class="fas fa-tasks text-emerald-600 text-2xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Gerencia de Proyectos</h3>
+                    <p class="text-sm text-slate-500">Planificación, ejecución y control de proyectos bajo estándares internacionales.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <i class="fas fa-shield-alt text-slate-600 text-2xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Auditoría de Sistemas</h3>
+                    <button onclick="generateAuditChecklist()" class="mt-2 text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition">Generar Checklist IA ✨</button>
+                    <p class="text-sm text-slate-500 mt-2">Evaluación exhaustiva de infraestructuras tecnológicas.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <i class="fas fa-layer-group text-orange-600 text-2xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Diseño Curricular</h3>
+                    <p class="text-sm text-slate-500">Desarrollo de planes de estudio modernos integrando metodologías activas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: BLOG (LABORATORIO IA CON LOGIN) -->
+        <section id="blog" class="section-content">
+            <div id="blog-login-container" class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-100 mt-10">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-shield text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">Acceso Privado</h2>
+                    <p class="text-slate-500 text-sm mt-2">Introduce tus credenciales de laboratorio</p>
+                </div>
+                <form id="login-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Usuario</label>
+                        <input type="text" id="username" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg outline-none text-sm focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Clave</label>
+                        <input type="password" id="password" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg outline-none text-sm focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="button" onclick="validateLogin()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold text-sm hover:bg-blue-700 transition shadow-lg">Entrar al Laboratorio</button>
+                    <p id="login-error" class="hidden text-red-500 text-[10px] text-center font-bold mt-2">Credenciales incorrectas.</p>
+                </form>
+            </div>
+
+            <div id="blog-protected-content" class="hidden bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden animate-fadeIn">
+                <div class="bg-slate-900 p-4 flex justify-between items-center overflow-x-auto">
+                    <nav class="flex gap-2 min-w-max">
+                        <button onclick="showBlogTab('dataset')" class="blog-sub-nav active px-4 py-2 rounded-lg text-sm font-medium transition" id="tab-dataset">Dataset</button>
+                        <button onclick="showBlogTab('anotacion')" class="blog-sub-nav px-4 py-2 text-slate-400 rounded-lg text-sm font-medium transition" id="tab-anotacion">Anotación</button>
+                        <button onclick="showBlogTab('entrenamiento')" class="blog-sub-nav px-4 py-2 text-slate-400 rounded-lg text-sm font-medium transition" id="tab-entrenamiento">Entrenamiento</button>
+                    </nav>
+                    <button onclick="logout()" class="ml-4 text-slate-400 hover:text-white text-xs bg-slate-800 px-3 py-1.5 rounded-lg transition">Salir</button>
+                </div>
+
+                <div class="p-8">
+                    <div id="blog-dataset" class="blog-tab-content block">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold">Gestión de Escenas Urbanas</h3>
+                                <p class="text-slate-500 text-sm">Carga imágenes para análisis automático por IA.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8 overflow-x-auto pb-2">
+                            <button onclick="filterDataset('Acera')" class="dataset-filter-btn px-4 py-1 bg-blue-500 text-white rounded-full text-xs font-semibold" id="filter-Acera">Acera</button>
+                            <button onclick="filterDataset('Hueco')" class="dataset-filter-btn px-4 py-1 bg-slate-100 rounded-full text-xs font-semibold hover:bg-blue-100" id="filter-Hueco">Hueco</button>
+                            <button onclick="filterDataset('Pavimento')" class="dataset-filter-btn px-4 py-1 bg-slate-100 rounded-full text-xs font-semibold hover:bg-blue-100" id="filter-Pavimento">Pavimento</button>
+                        </div>
+
+                        <div onclick="document.getElementById('file-input').click()" class="border-2 border-dashed border-blue-200 rounded-2xl p-8 text-center hover:bg-blue-50 transition cursor-pointer mb-8">
+                            <input type="file" id="file-input" class="hidden" accept="image/*" onchange="processAndAnalyzeImage(this.files[0])">
+                            <div id="upload-status">
+                                <i class="fas fa-cloud-upload-alt text-3xl text-blue-500 mb-3"></i>
+                                <p class="text-sm font-medium">Subir y analizar imagen con IA ✨</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4" id="image-grid"></div>
+                    </div>
+
+                    <div id="blog-anotacion" class="blog-tab-content hidden animate-fadeIn">
+                        <div class="text-center py-20 bg-slate-50 rounded-2xl border-2 border-dashed">
+                             <p class="text-slate-400 text-sm">Módulo de anotación asistida en desarrollo.</p>
+                        </div>
+                    </div>
+                    <div id="blog-entrenamiento" class="blog-tab-content hidden animate-fadeIn">
+                         <div class="bg-slate-900 rounded-xl p-6 font-mono text-emerald-400 text-xs h-64 overflow-y-auto">
+                             <p>> Inicializando entorno de entrenamiento...</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: RECURSOS -->
+        <section id="recursos" class="section-content">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Recursos y Documentación</h2>
+                <p class="text-slate-500">Material especializado para fortalecer tus procesos técnicos y educativos.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Recurso 1: Guías de Auditoría -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-file-invoice text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Guías de Auditoría</h3>
+                    <p class="text-xs text-slate-500 mb-4">Protocolos actualizados para la revisión de infraestructuras críticas y seguridad informática.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-slate-400">PDF • 2.4 MB</span>
+                        <a href="#" class="text-blue-600 text-xs font-bold hover:underline">Descargar →</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 2: Plantillas de Gerencia -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-project-diagram text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Plantillas de Proyectos</h3>
+                    <p class="text-xs text-slate-500 mb-4">Formatos para control de cronogramas, riesgos y presupuestos basados en PMBOK.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-slate-400">XLSX • 1.1 MB</span>
+                        <a href="#" class="text-emerald-600 text-xs font-bold hover:underline">Descargar →</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 3: Tesis de Grado -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Guías de Tesis de Grado</h3>
+                    <p class="text-xs text-slate-500 mb-4">Manuales de metodología de investigación, normas APA y estructura de tesis académicas.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-slate-400">PDF • 4.2 MB</span>
+                        <a href="#" class="text-red-600 text-xs font-bold hover:underline">Descargar →</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 4: Diseño Curricular -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chalkboard-teacher text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Metodología Curricular</h3>
+                    <p class="text-xs text-slate-500 mb-4">Framework paso a paso para la creación de planes de estudio modernos e innovadores.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-slate-400">DOCX • 3.5 MB</span>
+                        <a href="#" class="text-orange-600 text-xs font-bold hover:underline">Ver Guía →</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 5: Papers de IA Urbana -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-microchip text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Papers: IA y Urbanismo</h3>
+                    <p class="text-xs text-slate-500 mb-4">Investigaciones propias sobre el uso de redes neuronales en la detección de fallas viales.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-slate-400">PDF • 5.0 MB</span>
+                        <a href="#" class="text-indigo-600 text-xs font-bold hover:underline">Leer Más →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CONTACTO -->
+        <section id="contacto" class="section-content">
+             <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Contáctame</h2>
+                <p class="text-slate-500">Hablemos sobre tu próximo proyecto.</p>
+            </div>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Información de contacto lateral -->
+                <div class="lg:col-span-1 space-y-4">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-slate-900 uppercase tracking-wider">Email</h4>
+                            <p class="text-sm text-slate-500">arekunac@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-pink-50 text-pink-600 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-slate-900 uppercase tracking-wider">Instagram</h4>
+                            <div class="flex flex-col">
+                                <a href="https://instagram.com/arelisMGF" target="_blank" class="text-sm text-slate-500 hover:text-pink-600 transition">@arelisMGF</a>
+                                <a href="https://instagram.com/arelisMGF10" target="_blank" class="text-sm text-slate-500 hover:text-pink-600 transition">@arelisMGF10</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-6 rounded-3xl shadow-lg text-white">
+                        <h4 class="font-bold mb-2">Disponibilidad</h4>
+                        <p class="text-xs text-blue-100 leading-relaxed">Consultoría técnica de Lunes a Viernes. Respuesta en menos de 24 horas.</p>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="lg:col-span-2 bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">Nombre</label>
+                                <input type="text" placeholder="Tu nombre" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none text-sm focus:ring-2 focus:ring-blue-500 transition">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">Email</label>
+                                <input type="email" placeholder="correo@ejemplo.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none text-sm focus:ring-2 focus:ring-blue-500 transition">
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">Asunto</label>
+                            <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none text-sm focus:ring-2 focus:ring-blue-500 transition">
+                                <option>Consultoría IA</option>
+                                <option>Asesoría de Tesis</option>
+                                <option>Auditoría de Sistemas</option>
+                                <option>Otros</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">Mensaje</label>
+                            <textarea rows="4" placeholder="¿Cómo puedo ayudarte?" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none text-sm focus:ring-2 focus:ring-blue-500 transition"></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg flex items-center justify-center">
+                            Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-slate-400 hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/arelisMGF" class="text-slate-400 hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-slate-400 hover:text-slate-900 transition"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="text-slate-500 text-[10px]">© 2026 UrbanAI Pro - Laboratorio de Innovación Tecnológica.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE AUDITORÍA IA -->
+    <div id="audit-modal" class="fixed inset-0 bg-black/50 hidden z-[60] flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-8 relative">
+            <button onclick="closeAuditModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><i class="fas fa-times"></i></button>
+            <h3 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-shield-alt text-blue-600 mr-2"></i> Checklist de Auditoría ✨
+            </h3>
+            <div id="audit-content" class="text-sm text-slate-600 leading-relaxed max-h-[400px] overflow-y-auto">
+                Cargando recomendaciones de IA...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = ""; 
+        let currentCategory = 'Acera';
+        let imagesDatabase = [
+            { id: 101, category: 'Acera', src: 'https://images.unsplash.com/photo-1590486803833-ffc6f08d6fd5?auto=format&fit=crop&q=80&w=400', comment: 'Imagen base.', aiAnalysis: 'Estado: Óptimo' }
+        ]; 
+        let isLoggedIn = false;
+
+        async function geminiCall(prompt, model = "gemini-2.5-flash-preview-09-2025") {
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }]
+                    })
+                });
+                const data = await response.json();
+                return data.candidates?.[0]?.content?.parts?.[0]?.text || "Error en generación.";
+            } catch (err) {
+                console.error(err);
+                return "No se pudo conectar con el servicio de IA.";
+            }
+        }
+
+        async function generateCurriculum() {
+            const promptInput = document.getElementById('curriculum-prompt');
+            const resultBox = document.getElementById('curriculum-result');
+            if (!promptInput.value) return;
+
+            resultBox.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Diseñando estructura curricular...';
+            const response = await geminiCall(`Diseña una estructura curricular breve (objetivos, 3 módulos principales y perfil de egreso) para un curso sobre: ${promptInput.value}. Responde en español con formato limpio.`);
+            resultBox.innerText = response;
+        }
+
+        async function generateAuditChecklist() {
+            const modal = document.getElementById('audit-modal');
+            const content = document.getElementById('audit-content');
+            modal.classList.remove('hidden');
+            content.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Generando puntos de control técnicos...';
+            
+            const response = await geminiCall("Genera un checklist de 5 puntos críticos para una auditoría de sistemas en una empresa mediana que maneja datos sensibles. Enfócate en infraestructura y ciberseguridad.");
+            content.innerHTML = response.replace(/\n/g, '<br>');
+        }
+
+        function closeAuditModal() {
+            document.getElementById('audit-modal').classList.add('hidden');
+        }
+
+        async function processAndAnalyzeImage(file) {
+            if (!file) return;
+            const status = document.getElementById('upload-status');
+            const oldHtml = status.innerHTML;
+            status.innerHTML = '<i class="fas fa-sync fa-spin text-3xl text-blue-500 mb-3"></i><p class="text-sm font-medium">Analizando imagen con Visión por IA...</p>';
+
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                const base64Data = e.target.result.split(',')[1];
+                
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [
+                                    { text: "Analiza esta imagen urbana. Identifica si es una acera, pavimento o calle y describe su estado técnico (grietas, baches o buen estado) en una sola frase corta." },
+                                    { inlineData: { mimeType: "image/png", data: base64Data } }
+                                ]
+                            }]
+                        })
+                    });
+                    const data = await response.json();
+                    const aiResult = data.candidates?.[0]?.content?.parts?.[0]?.text || "Análisis completado.";
+                    
+                    imagesDatabase.push({
+                        id: Date.now(),
+                        category: currentCategory,
+                        src: e.target.result,
+                        comment: "Carga de usuario",
+                        aiAnalysis: aiResult
+                    });
+                    
+                    renderDatasetImages();
+                } catch (err) {
+                    console.error(err);
+                } finally {
+                    status.innerHTML = oldHtml;
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function validateLogin() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if (user === "Ven2026" && pass === "2021") {
+                isLoggedIn = true;
+                document.getElementById('blog-login-container').classList.add('hidden');
+                document.getElementById('blog-protected-content').classList.remove('hidden');
+                filterDataset('Acera');
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        }
+
+        function logout() {
+            isLoggedIn = false;
+            document.getElementById('blog-login-container').classList.remove('hidden');
+            document.getElementById('blog-protected-content').classList.add('hidden');
+        }
+
+        function showSection(id) {
+            document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            const navBtn = document.getElementById('nav-' + id);
+            if(navBtn) navBtn.classList.add('active');
+        }
+
+        function showBlogTab(tabId) {
+            document.querySelectorAll('.blog-tab-content').forEach(c => c.classList.add('hidden'));
+            document.querySelectorAll('.blog-sub-nav').forEach(t => t.classList.remove('active'));
+            document.getElementById('blog-' + tabId).classList.remove('hidden');
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
+        function filterDataset(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.dataset-filter-btn').forEach(b => b.classList.remove('bg-blue-500', 'text-white'));
+            const activeBtn = document.getElementById('filter-' + cat);
+            if(activeBtn) activeBtn.classList.add('bg-blue-500', 'text-white');
+            renderDatasetImages();
+        }
+
+        function renderDatasetImages() {
+            const grid = document.getElementById('image-grid');
+            if(!grid) return;
+            grid.innerHTML = '';
+            const filtered = imagesDatabase.filter(i => i.category === currentCategory);
+            filtered.forEach(img => {
+                const div = document.createElement('div');
+                div.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm animate-fadeIn";
+                div.innerHTML = `
+                    <div class="h-28 bg-slate-100"><img src="${img.src}" class="w-full h-full object-cover"></div>
+                    <div class="p-2">
+                        <p class="text-[8px] text-slate-500 italic">${img.aiAnalysis ? '✨ ' + img.aiAnalysis : 'Procesando...'}</p>
+                    </div>
+                `;
+                grid.prepend(div);
+            });
+        }
+    </script>
+</body>
+</html></h1>
 </body>
 </html>
